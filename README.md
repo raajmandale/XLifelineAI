@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/banner.svg" alt="XLifelineAI Banner" width="100%" />
+  <img src="./docs/banner.svg" width="100%" />
 </p>
 
 <h1 align="center">🤖 XLifelineAI</h1>
@@ -13,14 +13,13 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
   <img src="https://img.shields.io/badge/status-research--prototype-blue" />
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" />
   <img src="https://img.shields.io/badge/license-MIT-green" />
-  <img src="https://img.shields.io/badge/system-fragment--graph-purple" />
 </p>
 
 <p align="center">
-  <a href="./docs/simulator/index.html">
+  <a href="https://raajmandale.github.io/XLifelineAI/">
     <img src="https://img.shields.io/badge/Try%20in%20Browser-Interactive%20Simulator-2563eb?style=for-the-badge" />
   </a>
-  <a href="./docs/demo/resurrection_report.html">
+  <a href="https://raajmandale.github.io/XLifelineAI/demo/resurrection_report.html">
     <img src="https://img.shields.io/badge/Open-Resurrection%20Report-f97316?style=for-the-badge" />
   </a>
 </p>
@@ -31,26 +30,17 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 
 ---
 
-## 🎬 Live Demo Preview
+## 🎬 Live Demo
 
 <p align="center">
-  <img src="./docs/demo/xlifeline_preview.gif" width="920" />
-</p>
-
-<p align="center">
-<i>Memory breaks → fragments degrade → continuity rebuilds → execution continues</i>
+  <img src="./docs/demo/xlifeline_preview.gif" width="900" />
 </p>
 
 ---
 
 ## ✨ What is XLifelineAI?
 
-XLifelineAI is a **failure-native AI runtime** designed to ensure:
-
-> AI systems do not collapse when memory breaks  
-> They reconstruct context and continue execution  
-
-Instead of fragile memory blobs, it uses:
+A failure-native AI runtime using:
 
 👉 **Deterministic Fragment Graphs (DFG)**
 
@@ -62,97 +52,59 @@ Instead of fragile memory blobs, it uses:
 <img src="./docs/dfg_architecture.svg" width="900">
 </p>
 
-### Execution Lifecycle
-
 ```text
 RUN → FAIL → DETECT → REBUILD → CONTINUE
-🚀 60-Second Quickstart
-1️⃣ Clone repo
+🚀 Quickstart
 git clone https://github.com/raajmandale/XLifelineAI.git
 cd XLifelineAI
-2️⃣ Install
+
 python -m venv .venv
 .venv\Scripts\activate
+
 pip install -r requirements.txt
 pip install -e .
-3️⃣ Run demo
+
 python examples/resurrection_demo.py
-🧪 Demo Output
+🧪 Output
 Fragments created: 8
 Fragments destroyed: 3
 Integrity score: 0.625
 Continuity mode: patched
-
-✔ AI task completed successfully
-🧠 Fragment Graph Model
+🧠 Fragment Graph
 <p align="center"> <img src="./docs/fragment_graph.svg" width="900"> </p>
-
-Memory is split into fragments, not stored linearly.
-
-Each fragment:
-holds partial context
-connects to others
-survives independently
-🔗 Recovery Graph
+partial context
+connected memory
+survivable structure
+🔗 Recovery
 <p align="center"> <img src="./docs/fragment_recovery_graph.svg" width="900"> </p>
-When memory breaks:
-destroyed fragments are detected
-graph structure is analyzed
-missing parts are reconstructed
-⚙️ Runtime Flow
+detect loss
+analyze graph
+rebuild missing
+⚙️ Flow
 <p align="center"> <img src="./docs/runtime_flow.svg" width="900"> </p>
-Pipeline
-Fragment Graph
-↓
-Integrity Scan
-↓
-Semantic Repair
-↓
-Continuity Engine
-↓
-Execution Resume
-♻️ Rebuild Animation
+Graph → Scan → Repair → Continue
+♻️ Rebuild
 <p align="center"> <img src="./docs/dfg_rebuild_animation.svg" width="900"> </p>
-What happens
-detects gaps
-reconstructs context
-resumes execution
-🖥️ Interactive Preview
-🧠 Simulator
+🖥️ Preview
+
+Simulator:
+
 docs/simulator/index.html
-fragment breakdown
-recovery flow
-integrity scoring
-execution continuation
-📄 Resurrection Report
+
+Report:
+
 docs/demo/resurrection_report.html
-recovery timeline
-visual fragment state
-reconstructed output
-execution proof
-📂 Project Structure
-XLifelineAI
-│
-├ xlifeline/
-│   ├ core/
-│   ├ runtime/
-│   ├ recovery/
-│   ├ cli/
-│
-├ examples/
-├ docs/
-│   ├ svg/
-│   └ demo/
-│
-└ README.md
+📂 Structure
+xlifeline/
+docs/
+examples/
 🔍 Core Idea
-Traditional AI
 
-→ memory breaks → system resets
+Traditional:
+→ reset
 
-XLifelineAI
-
-→ memory breaks → system reconstructs → continues
+XLifelineAI:
+→ recover
 
 🧭 Use Cases
 AI continuity systems
@@ -191,3 +143,5 @@ If this idea resonates:
 AI shouldn’t restart.
 
 It should recover and continue.
+
+
