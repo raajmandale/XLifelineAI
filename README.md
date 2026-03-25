@@ -46,26 +46,26 @@ XLifelineAI introduces a different model:
 
 ---
 
-# 🧠 Runtime Model
+## 🧠 Runtime Model
 
 <p align="center">
 <img src="./docs/dfg_architecture.svg" width="900">
 </p>
 
-Execution lifecycle:
+### Execution Lifecycle
 
 ```text
 RUN → FAIL → DETECT → REBUILD → CONTINUE
 🚀 60-Second Quickstart
-1. Clone repo
+1️⃣ Clone repo
 git clone https://github.com/raajmandale/XLifelineAI.git
 cd XLifelineAI
-2. Install
+2️⃣ Install
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 pip install -e .
-3. Run demo
+3️⃣ Run demo
 python examples/resurrection_demo.py
 🧪 Demo Output
 Fragments created: 8
@@ -80,23 +80,18 @@ Continuity mode: patched
 Memory is split into fragments, not stored linearly.
 
 Each fragment:
-
 holds partial context
 connects to others
 survives independently
 🔗 Recovery Graph
 <p align="center"> <img src="./docs/fragment_recovery_graph.svg" width="900"> </p>
-
 When memory breaks:
-
 destroyed fragments are detected
 graph structure is analyzed
 missing parts are reconstructed
 ⚙️ Runtime Flow
 <p align="center"> <img src="./docs/runtime_flow.svg" width="900"> </p>
-
-Runtime pipeline:
-
+Pipeline:
 Fragment Graph
 ↓
 Integrity Scan
@@ -106,12 +101,9 @@ Semantic Repair
 Continuity Engine
 ↓
 Execution Resume
-
 ♻️ Rebuild Animation
 <p align="center"> <img src="./docs/dfg_rebuild_animation.svg" width="900"> </p>
-
-Shows how the system:
-
+What happens:
 detects gaps
 reconstructs context
 resumes execution
@@ -140,12 +132,11 @@ XLifelineAI
 │
 └ README.md
 🔍 Core Idea
-
-Traditional AI:
+Traditional AI
 
 → memory breaks → system resets
 
-XLifelineAI:
+XLifelineAI
 
 → memory breaks → system reconstructs → continues
 
@@ -155,21 +146,18 @@ long-running agents
 failure-resilient runtimes
 memory corruption simulation
 🗺 Roadmap
-
 v0 — DFG runtime core
 v1 — semantic repair
 v2 — distributed fragments
 v3 — agent-native runtime
-
 📊 Status
-
 Research prototype
 DFG continuity model validated
-
 👤 Author
 
 Raaj Mandale
 Systems Architect • AI Infrastructure • M-OS • QBAIX
+
 GitHub: https://github.com/raajmandale
 
 📄 License
@@ -179,4 +167,5 @@ MIT License
 🔥 Final Thought
 
 AI shouldn’t restart.
+
 It should recover and continue.
