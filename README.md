@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="XLifelineAI Banner" width="100%" />
+  <img src="./docs/banner.svg" alt="XLifelineAI Banner" width="100%" />
 </p>
 
 # 🤖 XLifelineAI
-### **Local AI that survives memory loss**
-#### *Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime*
+### Local AI that survives memory loss
+#### Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-research--prototype-blue" />
-  <img src="https://img.shields.io/badge/python-3.10%2B-blue" />
-  <img src="https://img.shields.io/badge/license-MIT-green" />
-  <img src="https://img.shields.io/badge/tests-passing-brightgreen" />
+  <img src="https://img.shields.io/badge/status-research--prototype-blue" alt="status" />
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="python" />
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="license" />
+  <img src="https://img.shields.io/badge/tests-passing-brightgreen" alt="tests" />
 </p>
 
 > **Failure is inevitable. Collapse is optional.**
@@ -21,6 +21,7 @@
 
 ### 🖥️ Interactive Simulator
 Open locally:
+
 ```text
 docs/simulator/index.html
 📄 Resurrection Report
@@ -35,9 +36,7 @@ XLifelineAI is a failure-native AI memory runtime designed to prove:
 AI systems should not collapse when memory breaks.
 They should reconstruct context and continue execution.
 
-Instead of fragile linear memory:
-
-👉 XLifelineAI uses a Deterministic Fragment Graph (DFG)
+Instead of fragile linear memory, XLifelineAI uses a Deterministic Fragment Graph (DFG).
 
 🧠 System Model
 RUN → FAIL → DETECT → REBUILD → CONTINUE
@@ -61,12 +60,14 @@ Today’s AI systems are still fragile:
 
 ⚙️ Runtime Flow
 
+♻️ Rebuild Animation
+
 🧪 Installation
 git clone https://github.com/raajmandale/XLifelineAI.git
 cd XLifelineAI
 
 python -m venv .venv
-.venv\Scripts\activate   # Windows
+.venv\Scripts\activate
 
 pip install -r requirements.txt
 pip install -e .
@@ -95,9 +96,9 @@ Continuity mode: patched
 ✅ research-grade prototype
 🚫 What this repo is NOT
 ❌ not a chatbot
-❌ not a vector DB
+❌ not a vector database
 ❌ not RAG
-❌ not backup system
+❌ not a backup system
 ❌ not production-ready
 🧠 Core Idea
 
