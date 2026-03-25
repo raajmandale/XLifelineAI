@@ -1,0 +1,26 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+.node{fill:#22c55e}
+.dead{fill:#ef4444}
+text{fill:white;font-family:Arial;font-size:12px}
+</style>
+
+<circle class="node" cx="80" cy="150" r="15"></circle>
+<circle class="node" cx="150" cy="80" r="15"></circle>
+<circle class="dead" cx="150" cy="220" r="15"></circle>
+<circle class="node" cx="250" cy="150" r="15"></circle>
+<circle class="node" cx="350" cy="80" r="15"></circle>
+<circle class="dead" cx="350" cy="220" r="15"></circle>
+<circle class="node" cx="450" cy="150" r="15"></circle>
+
+<line x1="80" y1="150" x2="150" y2="80" stroke="white"></line>
+<line x1="80" y1="150" x2="150" y2="220" stroke="white"></line>
+<line x1="150" y1="80" x2="250" y2="150" stroke="white"></line>
+<line x1="150" y1="220" x2="250" y2="150" stroke="white"></line>
+<line x1="250" y1="150" x2="350" y2="80" stroke="white"></line>
+<line x1="250" y1="150" x2="350" y2="220" stroke="white"></line>
+<line x1="350" y1="80" x2="450" y2="150" stroke="white"></line>
+<line x1="350" y1="220" x2="450" y2="150" stroke="white"></line>
+
+</svg>

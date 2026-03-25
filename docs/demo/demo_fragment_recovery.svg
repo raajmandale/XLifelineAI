@@ -1,0 +1,91 @@
+<svg width="1200" height="660" viewBox="0 0 1200 660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04111d"></stop>
+      <stop offset="100%" stop-color="#0c1d2f"></stop>
+    </linearGradient>
+    <filter id="glowBlue">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#38bdf8" flood-opacity="0.45"></feDropShadow>
+    </filter>
+    <filter id="glowOrange">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#f97316" flood-opacity="0.45"></feDropShadow>
+    </filter>
+    <style>
+      .title{fill:#f8fafc;font-family:Arial,Helvetica,sans-serif;font-size:34px;font-weight:700}
+      .subtitle{fill:#cbd5e1;font-family:Arial,Helvetica,sans-serif;font-size:17px}
+      .label{fill:#f8fafc;font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:700}
+      .text{fill:#cbd5e1;font-family:Arial,Helvetica,sans-serif;font-size:14px}
+      .frame{fill:#102336;stroke:#334155;stroke-width:1.8;rx:18;ry:18}
+      .link{stroke:#64748b;stroke-width:2.2;fill:none;stroke-dasharray:7 6}
+    </style>
+  </defs>
+
+  <rect width="1200" height="660" fill="url(#bg2)"></rect>
+
+  <text x="40" y="56" class="title">Fragment Recovery Overview</text>
+  <text x="40" y="86" class="subtitle">Destroyed fragments remain structurally visible, allowing partial reconstruction and continuity-aware recovery</text>
+
+  <rect x="40" y="130" width="340" height="380" class="frame"></rect>
+  <rect x="430" y="130" width="340" height="380" class="frame"></rect>
+  <rect x="820" y="130" width="340" height="380" class="frame"></rect>
+
+  <text x="80" y="168" class="label">Healthy State</text>
+  <text x="470" y="168" class="label">Corrupted State</text>
+  <text x="860" y="168" class="label">Recovered Continuity</text>
+
+  <!-- A -->
+  <line x1="120" y1="320" x2="200" y2="240" class="link"></line>
+  <line x1="200" y1="240" x2="290" y2="320" class="link"></line>
+  <line x1="200" y1="240" x2="200" y2="410" class="link"></line>
+  <line x1="290" y1="320" x2="330" y2="240" class="link"></line>
+  <circle cx="120" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="200" cy="240" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="290" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="330" cy="240" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="200" cy="410" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <text x="90" y="470" class="text">All fragments intact.</text>
+
+  <!-- B -->
+  <line x1="510" y1="320" x2="590" y2="240" class="link"></line>
+  <line x1="590" y1="240" x2="680" y2="320" class="link"></line>
+  <line x1="590" y1="240" x2="590" y2="410" class="link"></line>
+  <line x1="680" y1="320" x2="720" y2="240" class="link"></line>
+  <circle cx="510" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="590" cy="240" r="18" fill="#ef4444" filter="url(#glowOrange)">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.7s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="680" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="720" cy="240" r="18" fill="#ef4444" filter="url(#glowOrange)">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2.0s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="590" cy="410" r="18" fill="#ef4444" filter="url(#glowOrange)">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2.3s" repeatCount="indefinite"></animate>
+  </circle>
+  <text x="480" y="470" class="text">Destroyed fragments become explicit gaps.</text>
+
+  <!-- C -->
+  <line x1="900" y1="320" x2="980" y2="240" class="link"></line>
+  <line x1="980" y1="240" x2="1070" y2="320" class="link"></line>
+  <line x1="980" y1="240" x2="980" y2="410" class="link"></line>
+  <line x1="1070" y1="320" x2="1110" y2="240" class="link"></line>
+  <circle cx="900" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="980" cy="240" r="18" fill="#f97316" filter="url(#glowOrange)">
+    <animate attributeName="r" values="15;21;15" dur="1.8s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="1070" cy="320" r="18" fill="#38bdf8" filter="url(#glowBlue)"></circle>
+  <circle cx="1110" cy="240" r="18" fill="#f97316" filter="url(#glowOrange)">
+    <animate attributeName="r" values="15;21;15" dur="2.1s" repeatCount="indefinite"></animate>
+  </circle>
+  <circle cx="980" cy="410" r="18" fill="#f97316" filter="url(#glowOrange)">
+    <animate attributeName="r" values="15;21;15" dur="2.4s" repeatCount="indefinite"></animate>
+  </circle>
+
+  <path d="M680 320 C790 260, 860 250, 980 240" stroke="#f97316" stroke-width="4" fill="none" opacity="0.95">
+    <animate attributeName="stroke-dasharray" values="0,200;40,10;0,200" dur="2.2s" repeatCount="indefinite"></animate>
+  </path>
+
+  <text x="855" y="470" class="text">Recovered continuity preserves task usability.</text>
+
+  <rect x="180" y="560" width="840" height="54" class="frame"></rect>
+  <text x="290" y="594" class="label">Destroy → Detect → Rebuild → Continue</text>
+</svg>

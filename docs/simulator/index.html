@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XLifelineAI Runtime Simulator</title>
+  <link rel="stylesheet" href="./graph.css" />
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse-dot"></span> Failure-Native AI Runtime Simulator</div>
+      <h1>XLifelineAI Runtime</h1>
+      <div class="sub">
+        A cinematic, interactive simulator for <b>local AI that survives memory loss</b> through deterministic fragment graphs, continuity reconstruction, and semantic recovery.
+      </div>
+
+      <div class="hero-grid">
+        <div class="mini-card">
+          <div class="mini-title">Core Thesis</div>
+          <div class="mini-value">Failure is inevitable. Collapse is optional.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-title">Demo Promise</div>
+          <div class="mini-value">Break memory → Rebuild context → Continue task</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <!-- LEFT -->
+      <aside class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Simulator Modes</div>
+        </div>
+        <div class="panel-body">
+          <div class="modes">
+            <button class="mode-btn active" data-mode="resurrection">
+              <b>🧠 Resurrection Demo</b>
+              Memory breaks. Runtime survives.
+            </button>
+            <button class="mode-btn" data-mode="corruption">
+              <b>💥 Corruption Demo</b>
+              Honest engineering recovery view.
+            </button>
+            <button class="mode-btn" data-mode="continuity">
+              <b>🔄 Continuity Demo</b>
+              Ask → corrupt → continue.
+            </button>
+          </div>
+
+          <div class="action-bar">
+            <button class="btn" id="playBtn">Play Simulator</button>
+            <button class="btn secondary" id="resetBtn">Reset</button>
+          </div>
+
+          <div class="footer-note">
+            Visual runtime playback for GitHub, screenshots, recordings, and XMECK continuity doctrine.
+          </div>
+        </div>
+      </aside>
+
+      <!-- CENTER -->
+      <main class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Runtime Playback</div>
+          <div id="modeLabel" class="panel-tag">Resurrection Demo</div>
+        </div>
+        <div class="panel-body">
+          <div class="timeline" id="timeline">
+            <div class="step" data-step="0">Ask</div>
+            <div class="step" data-step="1">Fragment</div>
+            <div class="step" data-step="2">Destroy</div>
+            <div class="step" data-step="3">Rebuild</div>
+            <div class="step" data-step="4">Continue</div>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="stack">
+            <div class="terminal">
+              <div class="term-head">
+                <div class="term-dot red"></div>
+                <div class="term-dot yellow"></div>
+                <div class="term-dot green"></div>
+              </div>
+              <div class="term-line typing" id="terminalText">Ready.</div>
+            </div>
+
+            <div class="grid-wrap">
+              <div class="mini-title">Fragment Grid</div>
+              <div class="frag-grid" id="fragGrid"></div>
+              <div class="legend">
+                <span><i class="dot alive"></i> Alive</span>
+                <span><i class="dot dead"></i> Destroyed</span>
+                <span><i class="dot recovered"></i> Recovered / Patched</span>
+              </div>
+            </div>
+
+            <div class="split">
+              <div>
+                <div class="mini-title">Corrupted / Raw Memory</div>
+                <div class="codebox" id="rawBox"></div>
+              </div>
+              <div>
+                <div class="mini-title">Recovered / Continuity Output</div>
+                <div class="codebox" id="recoveredBox"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT -->
+      <aside class="panel">
+        <div class="panel-head">
+          <div class="panel-title">System Insight</div>
+        </div>
+        <div class="panel-body stack">
+          <div class="stat">
+            <h4>Integrity</h4>
+            <div id="integrityText" class="stat-value">1.000</div>
+            <div class="meter">
+              <div id="integrityFill" class="meter-fill"></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <h4>Continuity Mode</h4>
+            <div id="continuityMode" class="stat-value">EXACT</div>
+          </div>
+
+          <div class="stat">
+            <h4>Fragments</h4>
+            <div id="fragmentStats" class="stat-value small-value">8 total / 0 destroyed / 8 recovered</div>
+          </div>
+
+          <div class="status-banner ok" id="statusBanner">
+            ✔ CONTINUITY HEALTHY — exact state available
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="./simulator.js"></script>
+</body>
+</html>

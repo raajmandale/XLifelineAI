@@ -1,0 +1,126 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"></stop>
+      <stop offset="100%" stop-color="#111827"></stop>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#162033"></stop>
+      <stop offset="100%" stop-color="#1f2a44"></stop>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"></stop>
+      <stop offset="100%" stop-color="#22c55e"></stop>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#93c5fd"></path>
+    </marker>
+    <style>
+      .title { fill: #f8fafc; font-family: Arial, Helvetica, sans-serif; font-size: 34px; font-weight: 700; }
+      .subtitle { fill: #cbd5e1; font-family: Arial, Helvetica, sans-serif; font-size: 18px; }
+      .label { fill: #e5e7eb; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 700; }
+      .text { fill: #cbd5e1; font-family: Arial, Helvetica, sans-serif; font-size: 15px; }
+      .small { fill: #94a3b8; font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+      .box { fill: url(#box); stroke: #60a5fa; stroke-width: 2; rx: 18; ry: 18; }
+      .box-green { fill: url(#box); stroke: #22c55e; stroke-width: 2; rx: 18; ry: 18; }
+      .line { stroke: #93c5fd; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke: #64748b; stroke-width: 2; fill: none; stroke-dasharray: 8 8; }
+      .chip { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; rx: 10; ry: 10; }
+      .danger { fill: #7f1d1d; stroke: #f87171; stroke-width: 2; rx: 12; ry: 12; }
+      .heal { fill: #052e16; stroke: #4ade80; stroke-width: 2; rx: 12; ry: 12; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"></rect>
+
+  <text x="50" y="55" class="title">XLifelineAI — Deterministic Fragment Graph (DFG) Architecture</text>
+  <text x="50" y="85" class="subtitle">Research-grade view of resilient, self-healing AI memory</text>
+
+  <!-- Top flow -->
+  <rect x="60" y="130" width="190" height="90" class="box"></rect>
+  <text x="85" y="168" class="label">1. AI Memory Payload</text>
+  <text x="85" y="196" class="text">chat history, agent state,</text>
+  <text x="85" y="216" class="text">checkpoint, task context</text>
+
+  <rect x="300" y="130" width="220" height="90" class="box"></rect>
+  <text x="327" y="168" class="label">2. Fragment Engine</text>
+  <text x="327" y="196" class="text">deterministic chunking, IDs,</text>
+  <text x="327" y="216" class="text">checksums, manifest seeds</text>
+
+  <rect x="580" y="130" width="240" height="90" class="box"></rect>
+  <text x="610" y="168" class="label">3. DFG Manifest Graph</text>
+  <text x="610" y="196" class="text">fragment topology, ordering,</text>
+  <text x="610" y="216" class="text">integrity + recovery metadata</text>
+
+  <rect x="880" y="130" width="250" height="90" class="box"></rect>
+  <text x="913" y="168" class="label">4. Storage Layer</text>
+  <text x="913" y="196" class="text">local / distributed / object store</text>
+  <text x="913" y="216" class="text">fragments stored independently</text>
+
+  <path d="M250 175 L300 175" class="line"></path>
+  <path d="M520 175 L580 175" class="line"></path>
+  <path d="M820 175 L880 175" class="line"></path>
+
+  <!-- Middle graph -->
+  <rect x="120" y="300" width="420" height="260" class="box"></rect>
+  <text x="145" y="335" class="label">5. Deterministic Fragment Graph</text>
+  <text x="145" y="360" class="small">Fragments act as recoverable graph nodes, not fragile file slices</text>
+
+  <circle cx="220" cy="420" r="18" fill="#22c55e" filter="url(#glow)"></circle>
+  <circle cx="320" cy="370" r="18" fill="#38bdf8" filter="url(#glow)"></circle>
+  <circle cx="420" cy="425" r="18" fill="#22c55e" filter="url(#glow)"></circle>
+  <circle cx="300" cy="500" r="18" fill="#ef4444" filter="url(#glow)"></circle>
+  <circle cx="450" cy="510" r="18" fill="#38bdf8" filter="url(#glow)"></circle>
+  <circle cx="190" cy="510" r="18" fill="#22c55e" filter="url(#glow)"></circle>
+
+  <line x1="220" y1="420" x2="320" y2="370" class="dashed"></line>
+  <line x1="320" y1="370" x2="420" y2="425" class="dashed"></line>
+  <line x1="220" y1="420" x2="300" y2="500" class="dashed"></line>
+  <line x1="300" y1="500" x2="450" y2="510" class="dashed"></line>
+  <line x1="190" y1="510" x2="300" y2="500" class="dashed"></line>
+  <line x1="190" y1="510" x2="220" y2="420" class="dashed"></line>
+  <line x1="420" y1="425" x2="450" y2="510" class="dashed"></line>
+
+  <text x="145" y="590" class="text">🟢 alive nodes   🔵 linked nodes   🔴 lost / corrupted node</text>
+
+  <!-- Right side scan/rebuild -->
+  <rect x="620" y="300" width="230" height="100" class="box"></rect>
+  <text x="650" y="338" class="label">6. Integrity Scanner</text>
+  <text x="650" y="366" class="text">find missing fragments,</text>
+  <text x="650" y="386" class="text">verify checksums, score health</text>
+
+  <rect x="900" y="300" width="230" height="100" class="danger"></rect>
+  <text x="935" y="338" class="label">7. Failure Event</text>
+  <text x="935" y="366" class="text">loss, corruption, drift,</text>
+  <text x="935" y="386" class="text">storage disappearance</text>
+
+  <rect x="620" y="460" width="230" height="100" class="box-green"></rect>
+  <text x="650" y="498" class="label">8. Rebuild Engine</text>
+  <text x="650" y="526" class="text">resolve surviving paths,</text>
+  <text x="650" y="546" class="text">reconstruct bytes / structure</text>
+
+  <rect x="900" y="460" width="230" height="100" class="box-green"></rect>
+  <text x="930" y="498" class="label">9. Semantic Repair</text>
+  <text x="930" y="526" class="text">restore usable meaning when</text>
+  <text x="930" y="546" class="text">exact recovery is incomplete</text>
+
+  <path d="M540 430 L620 350" class="line"></path>
+  <path d="M850 350 L900 350" class="line"></path>
+  <path d="M1015 400 L1015 460" class="line"></path>
+  <path d="M850 510 L900 510" class="line"></path>
+  <path d="M540 470 L620 510" class="line"></path>
+
+  <!-- Bottom -->
+  <rect x="280" y="620" width="640" height="60" class="heal"></rect>
+  <text x="315" y="658" class="label">10. Recovered / Self-Healed AI Memory</text>
+  <text x="690" y="658" class="text">usable state restored → agent can continue operating</text>
+
+  <path d="M1015 560 L1015 610 L600 610 L600 620" class="line"></path>
+</svg>

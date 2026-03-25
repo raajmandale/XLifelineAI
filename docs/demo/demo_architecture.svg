@@ -1,0 +1,75 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06111f"></stop>
+      <stop offset="100%" stop-color="#0b1f33"></stop>
+    </linearGradient>
+    <filter id="glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#38bdf8" flood-opacity="0.35"></feDropShadow>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <polygon points="0,0 14,7 0,14" fill="#7dd3fc"></polygon>
+    </marker>
+    <style>
+      .title{fill:#f8fafc;font-family:Arial,Helvetica,sans-serif;font-size:34px;font-weight:700}
+      .subtitle{fill:#cbd5e1;font-family:Arial,Helvetica,sans-serif;font-size:17px}
+      .label{fill:#f8fafc;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700}
+      .text{fill:#cbd5e1;font-family:Arial,Helvetica,sans-serif;font-size:14px}
+      .boxBlue{fill:#10253d;stroke:#38bdf8;stroke-width:2.2;rx:18;ry:18;filter:url(#glow)}
+      .boxOrange{fill:#28190f;stroke:#f97316;stroke-width:2.2;rx:18;ry:18;filter:url(#glow)}
+      .boxSlate{fill:#13263a;stroke:#64748b;stroke-width:2;rx:18;ry:18;filter:url(#glow)}
+      .line{stroke:#7dd3fc;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"></rect>
+
+  <text x="40" y="56" class="title">XLifelineAI Runtime — Architecture</text>
+  <text x="40" y="86" class="subtitle">A failure-native AI runtime built to survive memory loss and continue execution</text>
+
+  <rect x="70" y="150" width="220" height="100" class="boxSlate"></rect>
+  <text x="105" y="190" class="label">User / CLI</text>
+  <text x="105" y="215" class="text">/ask • /corrupt-memory</text>
+  <text x="105" y="236" class="text">/rebuild • /continue</text>
+
+  <rect x="360" y="150" width="250" height="100" class="boxBlue"></rect>
+  <text x="395" y="190" class="label">Runtime Shell</text>
+  <text x="395" y="215" class="text">command processor</text>
+  <text x="395" y="236" class="text">session control</text>
+
+  <rect x="690" y="150" width="250" height="100" class="boxOrange"></rect>
+  <text x="725" y="190" class="label">Continuity Engine</text>
+  <text x="725" y="215" class="text">detect • rebuild • patch</text>
+  <text x="725" y="236" class="text">resume usable state</text>
+
+  <rect x="1010" y="150" width="160" height="100" class="boxBlue"></rect>
+  <text x="1040" y="190" class="label">Model</text>
+  <text x="1040" y="215" class="text">mock / local</text>
+
+  <path d="M290 200 L360 200" class="line"></path>
+  <path d="M610 200 L690 200" class="line"></path>
+  <path d="M940 200 L1010 200" class="line"></path>
+
+  <rect x="300" y="360" width="600" height="150" class="boxBlue"></rect>
+  <text x="360" y="404" class="label">DFG Memory Layer</text>
+  <text x="360" y="435" class="text">Memory is fragmented into deterministic units with stable positions and explicit destruction states.</text>
+  <text x="360" y="460" class="text">This enables partial recovery, visible continuity gaps, and runtime reconstruction.</text>
+
+  <path d="M800 250 L800 330" class="line"></path>
+
+  <rect x="120" y="590" width="250" height="90" class="boxSlate"></rect>
+  <text x="155" y="625" class="label">Storage Layer</text>
+  <text x="155" y="649" class="text">MemoryStore / LocalStore</text>
+
+  <rect x="470" y="590" width="250" height="90" class="boxOrange"></rect>
+  <text x="505" y="625" class="label">Chaos Engine</text>
+  <text x="505" y="649" class="text">Controlled fragment damage</text>
+
+  <rect x="820" y="590" width="250" height="90" class="boxBlue"></rect>
+  <text x="855" y="625" class="label">Output / Resume</text>
+  <text x="855" y="649" class="text">Continue task, not reset</text>
+
+  <path d="M470 510 L245 590" class="line"></path>
+  <path d="M610 510 L595 590" class="line"></path>
+  <path d="M760 510 L945 590" class="line"></path>
+</svg>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XLifelineAI Resurrection Report</title>
+  <style>
+    :root{
+      --bg:#07111d;
+      --panel:#0d1b2a;
+      --panel2:#11263a;
+      --text:#e6edf7;
+      --muted:#9fb0c6;
+      --blue:#38bdf8;
+      --orange:#f97316;
+      --green:#22c55e;
+      --red:#ef4444;
+      --border:rgba(255,255,255,.08);
+      --glow-blue:0 0 18px rgba(56,189,248,.35);
+      --glow-orange:0 0 18px rgba(249,115,22,.28);
+      --glow-green:0 0 18px rgba(34,197,94,.28);
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(249,115,22,.10), transparent 28%),
+        linear-gradient(135deg,#06111c 0%, #091724 40%, #0b1825 100%);
+    }
+
+    .wrap{
+      max-width:1380px;
+      margin:0 auto;
+      padding:28px 24px 40px;
+    }
+
+    .hero{
+      border:1px solid var(--border);
+      border-radius:24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        linear-gradient(135deg, #0c1826, #0e2133 55%, #0c1826);
+      box-shadow:0 10px 35px rgba(0,0,0,.35);
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+      margin-bottom:20px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-25%;
+      background:
+        radial-gradient(circle, rgba(56,189,248,.10), transparent 28%),
+        radial-gradient(circle, rgba(249,115,22,.08), transparent 26%);
+      animation: drift 16s linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes drift{
+      0%{transform:translate(-4%,-2%) rotate(0deg)}
+      50%{transform:translate(4%,2%) rotate(180deg)}
+      100%{transform:translate(-4%,-2%) rotate(360deg)}
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid rgba(56,189,248,.25);
+      border-radius:999px;
+      background:rgba(56,189,248,.08);
+      color:#cfefff;
+      font-size:13px;
+      letter-spacing:.4px;
+      position:relative;
+      z-index:1;
+    }
+
+    .pulse{
+      width:8px;height:8px;border-radius:50%;
+      background:var(--blue);
+      box-shadow:var(--glow-blue);
+      animation:pulse 1.6s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.45);opacity:.6}
+    }
+
+    h1{
+      margin:14px 0 6px;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      position:relative;
+      z-index:1;
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+      max-width:980px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:16px;
+      margin-top:20px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-card{
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      padding:16px;
+    }
+
+    .hero-card .k{
+      color:#bcd0e5;
+      font-size:12px;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .hero-card .v{
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .panel{
+      border:1px solid var(--border);
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      box-shadow:0 8px 28px rgba(0,0,0,.28);
+      overflow:hidden;
+    }
+
+    .panel-head{
+      padding:16px 18px;
+      border-bottom:1px solid var(--border);
+      background:rgba(255,255,255,.02);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+
+    .panel-title{
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .panel-tag{
+      color:#b8cae0;
+      font-size:13px;
+    }
+
+    .panel-body{
+      padding:18px;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:8px;
+      margin-bottom:16px;
+    }
+
+    .step{
+      min-height:74px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#0f1f30;
+      color:#b7c7da;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:13px;
+      padding:10px;
+    }
+
+    .step.active{
+      color:#fff;
+      border-color:rgba(56,189,248,.45);
+      background:linear-gradient(135deg, rgba(56,189,248,.16), rgba(255,255,255,.04));
+      box-shadow:var(--glow-blue);
+    }
+
+    .step.warn{
+      border-color:rgba(249,115,22,.45);
+      background:linear-gradient(135deg, rgba(249,115,22,.16), rgba(255,255,255,.04));
+      box-shadow:var(--glow-orange);
+      color:#fff;
+    }
+
+    .terminal{
+      border:1px solid rgba(255,255,255,.08);
+      background:#07111b;
+      border-radius:16px;
+      padding:16px;
+      min-height:260px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      font-size:14px;
+      line-height:1.65;
+      white-space:pre-wrap;
+      color:#dbe7f4;
+    }
+
+    .term-head{
+      display:flex;
+      gap:8px;
+      margin-bottom:14px;
+    }
+
+    .term-dot{width:10px;height:10px;border-radius:50%}
+    .term-dot.red{background:#fb7185}
+    .term-dot.yellow{background:#fbbf24}
+    .term-dot.green{background:#34d399}
+
+    .frag-area{
+      border:1px solid rgba(255,255,255,.08);
+      background:#0a1623;
+      border-radius:16px;
+      padding:16px;
+      margin-top:16px;
+    }
+
+    .frag-grid{
+      display:grid;
+      grid-template-columns:repeat(8, 1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .frag{
+      aspect-ratio:1/1;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#102236;
+      color:#b6c7d9;
+    }
+
+    .frag.alive{
+      background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(56,189,248,.08));
+      border-color:rgba(56,189,248,.4);
+      color:#dff6ff;
+      box-shadow:var(--glow-blue);
+    }
+
+    .frag.dead{
+      background:linear-gradient(135deg, rgba(239,68,68,.20), rgba(239,68,68,.08));
+      border-color:rgba(239,68,68,.5);
+      color:#ffd9d9;
+      animation: deadBlink 1.8s infinite;
+    }
+
+    .frag.recovered{
+      background:linear-gradient(135deg, rgba(249,115,22,.22), rgba(249,115,22,.08));
+      border-color:rgba(249,115,22,.55);
+      color:#fff1e6;
+      box-shadow:var(--glow-orange);
+      animation: recoverPulse 1.7s infinite;
+    }
+
+    @keyframes deadBlink{
+      0%,100%{opacity:1}
+      50%{opacity:.55}
+    }
+
+    @keyframes recoverPulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.08)}
+    }
+
+    .legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .legend span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      display:inline-block;
+    }
+
+    .dot.alive{background:var(--blue); box-shadow:var(--glow-blue)}
+    .dot.dead{background:var(--red)}
+    .dot.recovered{background:var(--orange); box-shadow:var(--glow-orange)}
+
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .stat{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:14px;
+      background:#0d1a29;
+    }
+
+    .stat h4{
+      margin:0 0 10px 0;
+      font-size:12px;
+      color:#b6c8db;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .stat-value{
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .small-value{
+      font-size:16px;
+      font-weight:600;
+      line-height:1.55;
+    }
+
+    .meter{
+      height:12px;
+      background:#15283b;
+      border-radius:999px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.06);
+      margin-top:8px;
+    }
+
+    .meter-fill{
+      height:100%;
+      width:62.5%;
+      background:linear-gradient(90deg,#38bdf8,#f97316);
+      box-shadow:var(--glow-blue);
+    }
+
+    .status-banner{
+      padding:14px 16px;
+      border-radius:16px;
+      font-weight:700;
+      letter-spacing:.02em;
+      border:1px solid rgba(249,115,22,.35);
+      background:linear-gradient(135deg, rgba(249,115,22,.16), rgba(255,255,255,.03));
+      box-shadow:var(--glow-orange);
+      color:#fff3e8;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .codebox{
+      border:1px solid rgba(255,255,255,.08);
+      background:#08111a;
+      border-radius:14px;
+      padding:14px;
+      min-height:180px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      font-size:13px;
+      line-height:1.6;
+      color:#d9e8f5;
+      white-space:pre-wrap;
+    }
+
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:#9eb1c8;
+      font-size:13px;
+    }
+
+    @media (max-width: 1100px){
+      .grid{grid-template-columns:1fr}
+      .hero-grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> Premium Resurrection Report</div>
+      <h1>XLifelineAI Resurrection Report</h1>
+      <div class="sub">
+        A polished technical playback of <b>memory damage, deterministic reconstruction, and continuity recovery</b> — designed for GitHub, demo videos, research presentation, and investor-grade storytelling.
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="k">Run Mode</div>
+          <div class="v">Patched Continuity</div>
+        </div>
+        <div class="hero-card">
+          <div class="k">Integrity</div>
+          <div class="v">0.625</div>
+        </div>
+        <div class="hero-card">
+          <div class="k">Final State</div>
+          <div class="v">Execution Continued</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="panel">
+        <div class="panel-head">
+          <div class="panel-title">System Playback</div>
+          <div class="panel-tag">Resurrection Sequence</div>
+        </div>
+        <div class="panel-body">
+          <div class="timeline">
+            <div class="step active">Ask</div>
+            <div class="step active">Fragment</div>
+            <div class="step warn">Destroy</div>
+            <div class="step warn">Rebuild</div>
+            <div class="step active">Continue</div>
+          </div>
+
+          <div class="terminal">
+            <div class="term-head">
+              <div class="term-dot red"></div>
+              <div class="term-dot yellow"></div>
+              <div class="term-dot green"></div>
+            </div>
+XLifelineAI — DFG Memory Resurrection Demo
+
+██ Initializing AI memory payload
+Fragments created: 8
+Payload size: 248 bytes
+
+██ Constructing deterministic fragment graph
+
+██ Simulating catastrophic fragment loss
+Fragments destroyed: 3
+
+██ Running integrity scan
+Byte recovery integrity: 62.5%
+
+██ Activating semantic repair
+Recovered semantic confidence: 75%
+
+██ Agent resume simulation
+Agent: context restored.
+Agent: continuing task...
+✔ AI task completed successfully.
+          </div>
+
+          <div class="frag-area">
+            <div class="mini-title">Fragment Recovery Grid</div>
+            <div class="frag-grid">
+              <div class="frag alive">00</div>
+              <div class="frag dead">01</div>
+              <div class="frag dead">02</div>
+              <div class="frag alive">03</div>
+              <div class="frag alive">04</div>
+              <div class="frag dead">05</div>
+              <div class="frag recovered">06</div>
+              <div class="frag recovered">07</div>
+            </div>
+            <div class="legend">
+              <span><i class="dot alive"></i> Alive</span>
+              <span><i class="dot dead"></i> Destroyed</span>
+              <span><i class="dot recovered"></i> Recovered / Patched</span>
+            </div>
+          </div>
+
+          <div class="split">
+            <div>
+              <div class="mini-title">Corrupted / Raw Memory</div>
+              <div class="codebox">User: Analyze the Q1 financial d[XLIFELINE_GAP]
+Agent: Running anomaly detection[XLIFELINE_GAP]
+Detecting unusual spike in regio[XLIFELINE_GAP]
+tistical summary.
+Agent: Preparing final insight report.</div>
+            </div>
+            <div>
+              <div class="mini-title">Recovered / Continuity Output</div>
+              <div class="codebox">Recovered continuity mode: patched
+
+Agent:
+Running anomaly detection...
+Detected unusual spike in region EU-West...
+Generating statistical summary...
+Preparing final insight report.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Recovery Metrics</div>
+          <div class="panel-tag">Technical Insight</div>
+        </div>
+        <div class="panel-body stack">
+          <div class="stat">
+            <h4>Integrity Score</h4>
+            <div class="stat-value">0.625</div>
+            <div class="meter"><div class="meter-fill"></div></div>
+          </div>
+
+          <div class="stat">
+            <h4>Continuity Mode</h4>
+            <div class="stat-value">PATCHED</div>
+          </div>
+
+          <div class="stat">
+            <h4>Fragments</h4>
+            <div class="stat-value small-value">8 total / 3 destroyed / 5 recovered</div>
+          </div>
+
+          <div class="status-banner">
+            ⚠ PARTIAL CONTINUITY — structure damaged, execution still resumed
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">
+      XLifelineAI Runtime — Failure is inevitable. Collapse is optional.
+    </div>
+  </div>
+</body>
+</html>

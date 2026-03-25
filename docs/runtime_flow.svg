@@ -1,0 +1,88 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05111e"></stop>
+      <stop offset="100%" stop-color="#0d2238"></stop>
+    </linearGradient>
+    <marker id="arrow3" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <polygon points="0,0 14,7 0,14" fill="#7dd3fc"></polygon>
+    </marker>
+    <filter id="shadow3" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#38bdf8" flood-opacity="0.28"></feDropShadow>
+    </filter>
+    <style>
+      .title { fill:#f8fafc; font-family:Arial, Helvetica, sans-serif; font-size:36px; font-weight:700; }
+      .subtitle { fill:#cbd5e1; font-family:Arial, Helvetica, sans-serif; font-size:18px; }
+      .label { fill:#f8fafc; font-family:Arial, Helvetica, sans-serif; font-size:20px; font-weight:700; }
+      .text { fill:#cbd5e1; font-family:Arial, Helvetica, sans-serif; font-size:14px; }
+      .boxBlue { fill:#10253d; stroke:#38bdf8; stroke-width:2.2; rx:18; ry:18; filter:url(#shadow3); }
+      .boxOrange { fill:#28190f; stroke:#f97316; stroke-width:2.2; rx:18; ry:18; filter:url(#shadow3); }
+      .line { stroke:#7dd3fc; stroke-width:3; fill:none; marker-end:url(#arrow3); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg3)"></rect>
+
+  <text x="50" y="58" class="title">Runtime Flow</text>
+  <text x="50" y="90" class="subtitle">The operational story of XLifelineAI Runtime: ask → fragment → damage → rebuild → continue</text>
+
+  <!-- flow boxes -->
+  <rect x="70" y="160" width="210" height="96" class="boxBlue"></rect>
+  <text x="112" y="200" class="label">/ask Prompt</text>
+  <text x="112" y="226" class="text">User sends request</text>
+
+  <rect x="350" y="160" width="230" height="96" class="boxBlue"></rect>
+  <text x="388" y="200" class="label">Model Response</text>
+  <text x="388" y="226" class="text">Mock/local model replies</text>
+
+  <rect x="650" y="160" width="250" height="96" class="boxOrange"></rect>
+  <text x="690" y="200" class="label">DFG Fragmentation</text>
+  <text x="690" y="226" class="text">Memory stored as fragments</text>
+
+  <rect x="970" y="160" width="250" height="96" class="boxBlue"></rect>
+  <text x="1010" y="200" class="label">Persist Manifest</text>
+  <text x="1010" y="226" class="text">Store active memory state</text>
+
+  <path d="M280 208 L350 208" class="line"></path>
+  <path d="M580 208 L650 208" class="line"></path>
+  <path d="M900 208 L970 208" class="line"></path>
+
+  <!-- corruption path -->
+  <rect x="180" y="390" width="240" height="96" class="boxOrange"></rect>
+  <text x="218" y="430" class="label">/corrupt-memory</text>
+  <text x="218" y="456" class="text">Destroy selected fragments</text>
+
+  <rect x="520" y="390" width="240" height="96" class="boxBlue"></rect>
+  <text x="560" y="430" class="label">Detect Loss</text>
+  <text x="560" y="456" class="text">Integrity drops, gaps appear</text>
+
+  <rect x="860" y="390" width="280" height="96" class="boxOrange"></rect>
+  <text x="900" y="430" class="label">Rebuild + Repair</text>
+  <text x="900" y="456" class="text">Recover usable continuity</text>
+
+  <path d="M1095 256 L1095 320 L300 320 L300 390" class="line"></path>
+  <path d="M420 438 L520 438" class="line"></path>
+  <path d="M760 438 L860 438" class="line"></path>
+
+  <!-- continue path -->
+  <rect x="300" y="620" width="250" height="96" class="boxBlue"></rect>
+  <text x="340" y="660" class="label">/continue Prompt</text>
+  <text x="340" y="686" class="text">Resume from recovered state</text>
+
+  <rect x="670" y="620" width="260" height="96" class="boxOrange"></rect>
+  <text x="710" y="660" class="label">Continuity Engine</text>
+  <text x="710" y="686" class="text">Exact / patched / degraded</text>
+
+  <rect x="1050" y="620" width="230" height="96" class="boxBlue"></rect>
+  <text x="1088" y="660" class="label">Continue Task</text>
+  <text x="1088" y="686" class="text">System does not reset</text>
+
+  <path d="M1000 486 L1000 555 L425 555 L425 620" class="line"></path>
+  <path d="M550 668 L670 668" class="line"></path>
+  <path d="M930 668 L1050 668" class="line"></path>
+
+  <!-- moving signal -->
+  <circle r="3" fill="#7dd3fc">
+    <animateMotion dur="7s" repeatCount="indefinite" path="M70,208 L280,208 L350,208 L580,208 L650,208 L900,208 L970,208 L1095,208 L1095,320 L300,320 L300,438 L420,438 L520,438 L760,438 L860,438 L1000,438 L1000,555 L425,555 L425,668 L550,668 L670,668 L930,668 L1050,668 L1280,668"></animateMotion>
+  </circle>
+</svg>
