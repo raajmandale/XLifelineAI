@@ -1,4 +1,6 @@
-![XLifelineAI Banner](docs/banner.svg)
+<p align="center">
+  <img src="docs/banner.svg" alt="XLifelineAI Banner" width="100%" />
+</p>
 
 # 🤖 XLifelineAI
 ### **Local AI that survives memory loss**
@@ -15,15 +17,15 @@
 
 ---
 
-# 🚀 Live Demo Layers
+## 🚀 Live Demo Layers
 
-## 🖥️ Interactive Simulator
-👉 Open locally:
+### 🖥️ Interactive Simulator
+Open locally:
 ```text
 docs/simulator/index.html
 📄 Resurrection Report
 
-👉 Open locally:
+Open locally:
 
 docs/demo/resurrection_report.html
 ✨ What is XLifelineAI?
