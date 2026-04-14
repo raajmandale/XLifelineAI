@@ -52,96 +52,172 @@ A failure-native AI runtime using:
 <img src="./docs/dfg_architecture.svg" width="900">
 </p>
 
-```text
-RUN → FAIL → DETECT → REBUILD → CONTINUE
-🚀 Quickstart
-git clone https://github.com/raajmandale/XLifelineAI.git
-cd XLifelineAI
+RUN → FAIL → DETECT → REBUILD → CONTINUE  
 
-python -m venv .venv
-.venv\Scripts\activate
+---
 
-pip install -r requirements.txt
-pip install -e .
+## 🚀 Quickstart
 
-python examples/resurrection_demo.py
-🧪 Output
-Fragments created: 8
-Fragments destroyed: 3
-Integrity score: 0.625
-Continuity mode: patched
-🧠 Fragment Graph
-<p align="center"> <img src="./docs/fragment_graph.svg" width="900"> </p>
-partial context
-connected memory
-survivable structure
-🔗 Recovery
-<p align="center"> <img src="./docs/fragment_recovery_graph.svg" width="900"> </p>
-detect loss
-analyze graph
-rebuild missing
-⚙️ Flow
-<p align="center"> <img src="./docs/runtime_flow.svg" width="900"> </p>
-Graph → Scan → Repair → Continue
-♻️ Rebuild
-<p align="center"> <img src="./docs/dfg_rebuild_animation.svg" width="900"> </p>
-🖥️ Preview
+### 1. Clone
 
-Simulator:
+git clone https://github.com/raajmandale/XLifelineAI.git  
+cd XLifelineAI  
 
-docs/simulator/index.html
+---
 
-Report:
+### 2. Setup environment
 
-docs/demo/resurrection_report.html
-📂 Structure
-xlifeline/
-docs/
-examples/
-🔍 Core Idea
+python -m venv .venv  
+.venv\Scripts\activate  
 
-Traditional:
-→ reset
+---
 
-XLifelineAI:
-→ recover
+### 3. Install dependencies
 
-🧭 Use Cases
-AI continuity systems
-long-running agents
-failure-resilient runtimes
-memory corruption simulation
-🗺 Roadmap
-v0 — DFG runtime core
-v1 — semantic repair
-v2 — distributed fragments
-v3 — agent-native runtime
-📊 Status
-Research prototype
-DFG continuity model validated
-👤 Author
+pip install -r requirements.txt  
+pip install -e .  
 
-Raaj Mandale
-Systems Architect • AI Infrastructure • M-OS • QBAIX
+---
 
-GitHub: https://github.com/raajmandale
+### 4. Run demo
 
-📄 License
+python examples/resurrection_demo.py  
 
-MIT License
+---
 
-⭐ Support
+## 🧪 Output
+
+Fragments created: 8  
+Fragments destroyed: 3  
+Integrity score: 0.625  
+Continuity mode: patched  
+
+---
+
+## 🧠 Fragment Graph
+
+<p align="center">
+  <img src="./docs/fragment_graph.svg" width="900">
+</p>
+
+- partial context  
+- connected memory  
+- survivable structure  
+
+---
+
+## 🔗 Recovery
+
+<p align="center">
+  <img src="./docs/fragment_recovery_graph.svg" width="900">
+</p>
+
+- detect loss  
+- analyze graph  
+- rebuild missing  
+
+---
+
+## ⚙️ Flow
+
+<p align="center">
+  <img src="./docs/runtime_flow.svg" width="900">
+</p>
+
+Graph → Scan → Repair → Continue  
+
+---
+
+## ♻️ Rebuild
+
+<p align="center">
+  <img src="./docs/dfg_rebuild_animation.svg" width="900">
+</p>
+
+---
+
+## 🖥️ Preview
+
+**Simulator**  
+docs/simulator/index.html  
+
+**Report**  
+docs/demo/resurrection_report.html  
+
+---
+
+## 📂 Structure
+
+xlifeline/  
+docs/  
+examples/  
+
+---
+
+## 🔍 Core Idea
+
+Traditional  
+→ reset  
+
+XLifelineAI  
+→ recover  
+
+---
+
+## 🧭 Use Cases
+
+- AI continuity systems  
+- long-running agents  
+- failure-resilient runtimes  
+- memory corruption simulation  
+
+---
+
+## 🗺 Roadmap
+
+v0 — DFG runtime core  
+v1 — semantic repair  
+v2 — distributed fragments  
+v3 — agent-native runtime  
+
+---
+
+## 📊 Status
+
+Research prototype  
+DFG continuity model validated  
+
+---
+
+## 👤 Author
+
+Raaj Mandale  
+Systems Architect • AI Infrastructure • M-OS • QBAIX  
+
+GitHub: https://github.com/raajmandale  
+
+---
+
+## 📄 License
+
+MIT License  
+
+---
+
+## ⭐ Support
 
 If this idea resonates:
 
-⭐ Star the repo
-🍴 Fork it
-🧪 Break it
-🧠 Build on top of it
-🔥 Final Thought
+⭐ Star the repo  
+🍴 Fork it  
+🧪 Break it  
+🧠 Build on top of it  
 
-AI shouldn’t restart.
+---
 
+## 🔥 Final Thought
+
+AI shouldn’t restart.  
 It should recover and continue.
 
 
