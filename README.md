@@ -37,7 +37,18 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 </p>
 
 ---
+## 🌐 SGDS Ecosystem Surfaces
 
+| Surface | Purpose | Link |
+|---|---|---|
+| XPADI-SGDS | Canonical survivability ecosystem root | https://github.com/raajmandale/XPADI-SGDS |
+| XPADI Proof Engine | Runtime continuity reactor | https://raajmandale.github.io/XPADI_Proof_Engine_V1/ |
+| Digital Lifeline | Survivability architecture narrative | https://github.com/raajmandale/digital-lifeline |
+| XLifelineAI | AI-native continuity & self-healing runtime | https://github.com/raajmandale/XLifelineAI |
+| XPADI-ProofCheck | Recovery intelligence surface | https://xpadi.com/proofcheck/ |
+| Research Paper | SGDS architecture & theory | https://zenodo.org/records/19500143 |
+
+---
 ## ✨ What is XLifelineAI?
 
 A failure-native AI runtime using:
