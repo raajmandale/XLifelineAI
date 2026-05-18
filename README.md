@@ -32,11 +32,30 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 
 ## 🎬 Live Demo
 
+## 🎬 Live Runtime Surface
+
+<p align="center">
+
+<a href="https://raajmandale.github.io/XLifelineAI/">
+<img src="https://img.shields.io/badge/LIVE-CONTINUITY%20RUNTIME-2563eb?style=for-the-badge" />
+</a>
+
+<a href="https://raajmandale.github.io/XLifelineAI/demo/resurrection_report.html">
+<img src="https://img.shields.io/badge/REPORT-RESURRECTION%20VIEW-f97316?style=for-the-badge" />
+</a>
+
+</p>
+
 <p align="center">
   <img src="./docs/demo/xlifeline_preview.gif" width="900" />
 </p>
 
+<p align="center">
+<i>Interactive continuity-runtime simulation exploring self-healing AI memory, deterministic fragment graphs, and post-failure runtime reconstruction.</i>
+</p>
+
 ---
+
 ## 🌐 SGDS Ecosystem Surfaces
 
 | Surface | Purpose | Link |
@@ -49,6 +68,53 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 | Research Paper | SGDS architecture & theory | https://zenodo.org/records/19500143 |
 
 ---
+---
+
+## 🌐 Mandale-OS Runtime Ecosystem
+
+XLifelineAI now also operates as the continuity-runtime branch of the broader Mandale-OS ecosystem.
+
+<p align="center">
+
+<a href="https://github.com/raajmandale/mandale-os">
+<img src="https://img.shields.io/badge/Mandale--OS-Runtime%20Root-06b6d4?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/raajmandale/mos-mee-execution-reactor">
+<img src="https://img.shields.io/badge/MEE-Execution%20Reactor-f97316?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/raajmandale/M-OS_PPE">
+<img src="https://img.shields.io/badge/PPE-Proof%20Runtime-6366f1?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/raajmandale/mos-parameter-golf">
+<img src="https://img.shields.io/badge/Parameter-Golf%20Lab-84cc16?style=for-the-badge" />
+</a>
+
+<a href="https://github.com/raajmandale/XLifelineAI">
+<img src="https://img.shields.io/badge/XLifelineAI-Continuity%20Runtime-0ea5e9?style=for-the-badge" />
+</a>
+
+</p>
+
+---
+## 🧠 Runtime Positioning
+
+XLifelineAI explores continuity-native AI execution where memory, fragments, graph intelligence, and runtime survivability become part of the execution lifecycle itself.
+
+Within the Mandale-OS ecosystem, XLifelineAI represents:
+
+- continuity-runtime research
+- self-healing execution systems
+- post-failure runtime recovery
+- graph-aware memory continuity
+- AI survivability infrastructure
+
+RUN → FAIL → DETECT → REBUILD → CONTINUE
+
+---
+
 ## ✨ What is XLifelineAI?
 
 A failure-native AI runtime using:
@@ -199,13 +265,14 @@ Research prototype
 DFG continuity model validated  
 
 ---
-
 ## 👤 Author
 
 Raaj Mandale  
-Systems Architect • AI Infrastructure • M-OS • QBAIX  
+Systems Architect • Runtime Intelligence • Mandale-OS • QBAIX • XPADI-SGDS
 
-GitHub: https://github.com/raajmandale  
+🌐 https://raajmandale.in  
+🔬 https://orcid.org/0009-0005-9810-1655  
+📚 https://openalex.org/A5127026877
 
 ---
 
