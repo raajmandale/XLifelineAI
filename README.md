@@ -29,9 +29,6 @@ Deterministic Fragment Graphs • Continuity Engine • Self-Healing Runtime
 </p>
 
 ---
-
-## 🎬 Live Demo
-
 ## 🎬 Live Runtime Surface
 
 <p align="center">
